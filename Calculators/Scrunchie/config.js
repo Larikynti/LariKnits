@@ -1,10 +1,6 @@
 const scrunchieConfig = {
 
     name: "Scrunchie",
-
-    // Default hair tie diameter in cm
-    defaultHairTieDiameter: 5,
-
     sizes: {
 
         S: {
