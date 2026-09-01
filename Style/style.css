@@ -1,85 +1,122 @@
 /* =====================================================
-   LARIKNITS — GLOBAL STYLE
+   LARIKNITS — SCRUNCHIE KNITTING PATTERN
+   Warm Autumn Theme
+   Font: Calibri
    ===================================================== */
 
+
+/* -------------------------
+   COLOURS
+   ------------------------- */
+
 :root {
+    --cream: #F6EFE5;
+    --paper: #FFFDF9;
 
-    /* Colours */
+    --terracotta: #B75F45;
+    --rust: #914735;
+    --mustard: #C49A4A;
+    --olive: #707048;
 
-    --cream: #F4EBDD;
-    --paper: #FFFDF8;
+    --brown: #60473A;
+    --dark: #3E342F;
+    --muted: #7C6D63;
 
-    --terracotta: #B65F45;
-    --rust: #8E4635;
-
-    --mustard: #C39A4B;
-    --olive: #77704D;
-
-    --brown: #60483B;
-    --dark: #3D332E;
-    --muted: #7B6D63;
-
-    --border: #D8C8B8;
-    --soft: #F3E4D8;
-
-
-    /* Typography */
-
-    --font-main: Calibri, Arial, sans-serif;
-
+    --border: #D8C7B8;
+    --soft-rust: #F2E2D9;
 }
 
 
-/* =====================================================
+/* -------------------------
    RESET
-   ===================================================== */
+   ------------------------- */
 
 * {
     box-sizing: border-box;
 }
 
 
+/* -------------------------
+   BODY
+   ------------------------- */
+
 body {
-
     margin: 0;
-
     padding: 40px 20px;
 
     background: var(--cream);
-
     color: var(--dark);
 
-    font-family: var(--font-main);
-
+    font-family: Calibri, Arial, sans-serif;
     line-height: 1.5;
-
 }
 
 
-/* =====================================================
+/* -------------------------
    MAIN CONTAINER
-   ===================================================== */
+   ------------------------- */
 
 .container {
-
-    width: 100%;
-
-    max-width: 850px;
-
+    max-width: 700px;
     margin: 0 auto;
-
 }
 
 
-.card {
-
+.pattern-card {
     background: var(--paper);
 
     border: 1px solid var(--border);
 
     box-shadow:
-        0 12px 35px rgba(70, 45, 30, 0.10);
+        0 12px 35px rgba(80, 55, 40, 0.10);
+}
 
+
+/* =====================================================
+   LANGUAGE SWITCHER
+   ===================================================== */
+
+.language-switcher {
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 18px 25px 0;
+}
+
+
+.language-switcher button {
+    padding: 6px 11px;
+
+    border: 1px solid var(--border);
+    background: transparent;
+
+    color: var(--muted);
+
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+.language-switcher button:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+
+.language-switcher button:last-child {
+    border-radius: 0 5px 5px 0;
+
+    margin-left: -1px;
+}
+
+
+.language-switcher button.active {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+
+    color: white;
+    font-weight: 600;
 }
 
 
@@ -87,42 +124,56 @@ body {
    HEADER
    ===================================================== */
 
-.site-header {
-
-    padding: 40px 35px;
-
+.header {
     text-align: center;
 
+    padding: 30px 25px 38px;
 }
 
 
-.site-header h1 {
+.header-decoration {
+    color: var(--terracotta);
 
+    font-size: 18px;
+
+    margin-bottom: 12px;
+}
+
+
+.header-title {
     margin: 0;
 
     color: var(--rust);
 
-    font-size: 42px;
+    font-size: 30px;
+    font-weight: 600;
 
-    font-weight: 500;
-
-    line-height: 1.2;
-
+    letter-spacing: 0.5px;
 }
 
 
 .brand {
-
-    margin-top: 10px;
+    margin-top: 12px;
 
     color: var(--mustard);
 
-    font-size: 20px;
-
+    font-size: 16px;
     font-weight: 600;
 
     letter-spacing: 3px;
+}
 
+
+/* =====================================================
+   DIVIDER
+   ===================================================== */
+
+.divider {
+    height: 1px;
+
+    background: var(--border);
+
+    margin: 0 35px;
 }
 
 
@@ -131,154 +182,428 @@ body {
    ===================================================== */
 
 .section {
-
-    padding: 35px 50px;
-
+    padding: 32px 35px;
 }
 
 
-.section + .section {
-
-    border-top: 1px solid var(--border);
-
-}
-
-
-/* =====================================================
-   HEADINGS
-   ===================================================== */
-
-h2 {
-
-    margin: 0 0 18px;
+.section-title {
+    margin: 0 0 22px;
 
     color: var(--rust);
 
-    font-size: 24px;
-
+    font-size: 20px;
     font-weight: 600;
 
+    letter-spacing: 1px;
 }
 
 
-h2::before {
+.intro {
+    margin: -5px 0 25px;
 
-    content: "✦ ";
+    color: var(--muted);
 
-    color: var(--mustard);
-
-}
-
-
-/* =====================================================
-   TEXT
-   ===================================================== */
-
-p {
-
-    margin-top: 0;
-
+    font-size: 15px;
 }
 
 
 /* =====================================================
-   INPUTS
+   GAUGE
    ===================================================== */
 
-label {
+.gauge-grid {
+    display: grid;
 
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.field label {
     display: block;
 
     margin-bottom: 7px;
 
     color: var(--brown);
 
+    font-size: 14px;
     font-weight: 600;
-
 }
 
 
-input {
+.input-wrapper {
+    display: flex;
 
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+input[type="number"] {
     width: 100%;
 
     padding: 12px;
 
     border: 1px solid var(--border);
-
-    border-radius: 5px;
+    border-radius: 6px;
 
     background: white;
-
     color: var(--dark);
 
-    font-family: var(--font-main);
-
+    font-family: Calibri, Arial, sans-serif;
     font-size: 16px;
 
+    outline: none;
 }
 
 
-input:focus {
-
-    outline: none;
-
+input[type="number"]:focus {
     border-color: var(--terracotta);
 
     box-shadow:
-        0 0 0 3px rgba(182, 95, 69, 0.12);
+        0 0 0 3px rgba(183, 95, 69, 0.12);
+}
 
+
+.unit {
+    color: var(--muted);
+
+    white-space: nowrap;
+
+    font-size: 14px;
 }
 
 
 /* =====================================================
-   BUTTONS
+   SIZE SELECTION
    ===================================================== */
 
-button {
+.size-options {
+    display: grid;
 
-    font-family: var(--font-main);
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+
+.size-option {
+    position: relative;
+}
+
+
+.size-option input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.size-option label {
+    display: block;
+
+    padding: 16px 10px;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    background: white;
+    color: var(--brown);
+
+    text-align: center;
+
+    font-size: 16px;
+    font-weight: 600;
 
     cursor: pointer;
 
+    transition: all 0.2s ease;
+}
+
+
+.size-option label:hover {
+    border-color: var(--terracotta);
+
+    background: var(--soft-rust);
+}
+
+
+.size-option input:checked + label {
+    background: var(--terracotta);
+
+    border-color: var(--terracotta);
+
+    color: white;
+}
+
+
+/* =====================================================
+   SELECT ALL
+   ===================================================== */
+
+.select-all {
+    margin-top: 14px;
+
+    text-align: right;
+}
+
+
+.select-all button {
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: var(--olive);
+
+    font-family: Calibri, Arial, sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   CALCULATE BUTTON
+   ===================================================== */
+
+.button-area {
+    padding: 0 35px 35px;
 }
 
 
 .calculate-button {
+    width: 100%;
 
-    padding: 15px 30px;
+    padding: 16px;
 
     border: none;
-
-    border-radius: 5px;
+    border-radius: 6px;
 
     background: var(--terracotta);
-
     color: white;
 
-    font-size: 17px;
+    font-family: Calibri, Arial, sans-serif;
 
+    font-size: 16px;
     font-weight: 600;
 
     letter-spacing: 1px;
 
+    cursor: pointer;
+
+    transition: background 0.2s ease;
 }
 
 
 .calculate-button:hover {
-
     background: var(--rust);
-
 }
 
 
 /* =====================================================
-   FOOTER
+   ERROR
    ===================================================== */
 
-.site-footer {
+.error {
+    display: none;
 
-    padding: 30px 50px 40px;
+    margin-top: 15px;
+
+    color: #9A3E32;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   RESULTS
+   ===================================================== */
+
+.results {
+    display: none;
+
+    padding: 38px 35px;
+
+    background: var(--soft-rust);
+}
+
+
+.results-title {
+    margin-bottom: 28px;
+
+    color: var(--rust);
+
+    text-align: center;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   PERSONAL PATTERN
+   ===================================================== */
+
+.pattern-instructions {
+    padding: 30px;
+
+    background: var(--paper);
+
+    border: 1px solid var(--border);
+
+    text-align: center;
+}
+
+
+.pattern-instructions p {
+    margin: 14px 0;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+}
+
+
+.pattern-instructions strong {
+    color: var(--rust);
+
+    font-size: 26px;
+    font-weight: 700;
+}
+
+
+.size-key {
+    margin-top: 22px;
+
+    color: var(--olive);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   ADVANCED
+   ===================================================== */
+
+.advanced {
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+
+    text-align: left;
+}
+
+
+.advanced-title {
+    margin-bottom: 10px;
+
+    color: var(--olive);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.advanced p {
+    margin: 0;
+
+    color: var(--dark);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+   ===================================================== */
+
+.action-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+.action-button {
+    flex: 1;
+
+    padding: 14px;
+
+    border-radius: 6px;
+
+    font-family: Calibri, Arial, sans-serif;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.print-button {
+    border: 1px solid var(--terracotta);
+
+    background: white;
+
+    color: var(--terracotta);
+}
+
+
+.print-button:hover {
+    background: var(--soft-rust);
+}
+
+
+.download-button {
+    border: none;
+
+    background: var(--olive);
+
+    color: white;
+}
+
+
+.download-button:hover {
+    background: #5C5D3B;
+}
+
+
+/* =====================================================
+   COPYRIGHT
+   ===================================================== */
+
+.copyright {
+    padding: 30px 35px 35px;
 
     color: var(--muted);
 
@@ -286,6 +611,7 @@ button {
 
     font-size: 12px;
 
+    line-height: 1.7;
 }
 
 
@@ -296,37 +622,139 @@ button {
 @media (max-width: 650px) {
 
     body {
-
         padding: 15px;
-
     }
 
 
-    .site-header {
-
-        padding: 30px 22px;
-
+    .language-switcher {
+        padding-right: 20px;
     }
 
 
-    .site-header h1 {
+    .header {
+        padding: 25px 20px 30px;
+    }
 
-        font-size: 30px;
 
+    .header-title {
+        font-size: 24px;
+    }
+
+
+    .gauge-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .size-options {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
 
     .section {
-
-        padding: 28px 22px;
-
+        padding: 28px 20px;
     }
 
 
-    .site-footer {
+    .button-area {
+        padding: 0 20px 28px;
+    }
 
-        padding: 25px 22px 30px;
 
+    .results {
+        padding: 30px 20px;
+    }
+
+
+    .divider {
+        margin: 0 20px;
+    }
+
+
+    .pattern-instructions {
+        padding: 25px 18px;
+    }
+
+
+    .pattern-instructions p {
+        font-size: 17px;
+    }
+
+
+    .pattern-instructions strong {
+        font-size: 23px;
+    }
+
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+}
+
+
+/* =====================================================
+   PRINT
+   ===================================================== */
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+
+    body {
+        padding: 0;
+
+        background: white;
+
+        font-size: 12pt;
+    }
+
+
+    .container {
+        max-width: none;
+    }
+
+
+    .pattern-card {
+        border: none;
+
+        box-shadow: none;
+    }
+
+
+    .language-switcher,
+    .button-area,
+    .action-buttons {
+        display: none;
+    }
+
+
+    .results {
+        display: block !important;
+
+        background: white;
+
+        padding: 20px 0;
+    }
+
+
+    .results-title {
+        color: black;
+    }
+
+
+    .pattern-instructions {
+        border: 1px solid #999;
+    }
+
+
+    .copyright {
+        page-break-inside: avoid;
     }
 
 }
