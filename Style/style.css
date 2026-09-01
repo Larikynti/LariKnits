@@ -5,11 +5,12 @@
    ===================================================== */
 
 
-/* -------------------------
+/* =====================================================
    COLOURS
-   ------------------------- */
+   ===================================================== */
 
 :root {
+
     --cream: #F6EFE5;
     --paper: #FFFDF9;
 
@@ -24,51 +25,64 @@
 
     --border: #D8C7B8;
     --soft-rust: #F2E2D9;
+
 }
 
 
-/* -------------------------
+/* =====================================================
    RESET
-   ------------------------- */
+   ===================================================== */
 
 * {
     box-sizing: border-box;
 }
 
 
-/* -------------------------
+/* =====================================================
    BODY
-   ------------------------- */
+   ===================================================== */
 
 body {
+
     margin: 0;
-    padding: 40px 20px;
+
+    padding: 50px 20px;
 
     background: var(--cream);
+
     color: var(--dark);
 
     font-family: Calibri, Arial, sans-serif;
-    line-height: 1.5;
+
+    line-height: 1.6;
+
 }
 
 
-/* -------------------------
+/* =====================================================
    MAIN CONTAINER
-   ------------------------- */
+   ===================================================== */
 
 .container {
-    max-width: 700px;
+
+    width: 100%;
+
+    max-width: 760px;
+
     margin: 0 auto;
+
 }
 
 
 .pattern-card {
+
     background: var(--paper);
 
     border: 1px solid var(--border);
 
     box-shadow:
-        0 12px 35px rgba(80, 55, 40, 0.10);
+        0 15px 40px rgba(80, 55, 40, 0.10);
+
 }
 
 
@@ -77,46 +91,61 @@ body {
    ===================================================== */
 
 .language-switcher {
+
     display: flex;
+
     justify-content: flex-end;
 
-    padding: 18px 25px 0;
+    padding: 20px 35px 0;
+
 }
 
 
 .language-switcher button {
-    padding: 6px 11px;
+
+    padding: 7px 12px;
 
     border: 1px solid var(--border);
+
     background: transparent;
 
     color: var(--muted);
 
     font-family: Calibri, Arial, sans-serif;
+
     font-size: 12px;
 
     cursor: pointer;
+
 }
 
 
 .language-switcher button:first-child {
+
     border-radius: 5px 0 0 5px;
+
 }
 
 
 .language-switcher button:last-child {
-    border-radius: 0 5px 5px 0;
 
     margin-left: -1px;
+
+    border-radius: 0 5px 5px 0;
+
 }
 
 
 .language-switcher button.active {
+
     background: var(--terracotta);
+
     border-color: var(--terracotta);
 
     color: white;
+
     font-weight: 600;
+
 }
 
 
@@ -125,42 +154,52 @@ body {
    ===================================================== */
 
 .header {
+
+    padding: 38px 45px 42px;
+
     text-align: center;
 
-    padding: 30px 25px 38px;
 }
 
 
 .header-decoration {
+
+    margin-bottom: 14px;
+
     color: var(--terracotta);
 
-    font-size: 18px;
+    font-size: 20px;
 
-    margin-bottom: 12px;
 }
 
 
 .header-title {
+
     margin: 0;
 
     color: var(--rust);
 
-    font-size: 30px;
+    font-size: 32px;
+
     font-weight: 600;
 
     letter-spacing: 0.5px;
+
 }
 
 
 .brand {
-    margin-top: 12px;
+
+    margin-top: 13px;
 
     color: var(--mustard);
 
-    font-size: 16px;
+    font-size: 17px;
+
     font-weight: 600;
 
     letter-spacing: 3px;
+
 }
 
 
@@ -169,11 +208,13 @@ body {
    ===================================================== */
 
 .divider {
+
     height: 1px;
+
+    margin: 0 45px;
 
     background: var(--border);
 
-    margin: 0 35px;
 }
 
 
@@ -182,28 +223,37 @@ body {
    ===================================================== */
 
 .section {
-    padding: 32px 35px;
+
+    padding: 40px 45px;
+
 }
 
 
 .section-title {
-    margin: 0 0 22px;
+
+    margin: 0 0 20px;
 
     color: var(--rust);
 
-    font-size: 20px;
+    font-size: 21px;
+
     font-weight: 600;
 
     letter-spacing: 1px;
+
 }
 
 
 .intro {
-    margin: -5px 0 25px;
+
+    margin: 0 0 28px;
 
     color: var(--muted);
 
     font-size: 15px;
+
+    line-height: 1.7;
+
 }
 
 
@@ -212,68 +262,86 @@ body {
    ===================================================== */
 
 .gauge-grid {
+
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 18px;
+    gap: 22px;
+
 }
 
 
 .field label {
+
     display: block;
 
-    margin-bottom: 7px;
+    margin-bottom: 8px;
 
     color: var(--brown);
 
     font-size: 14px;
+
     font-weight: 600;
+
 }
 
 
 .input-wrapper {
+
     display: flex;
 
     align-items: center;
 
     gap: 8px;
+
 }
 
 
 input[type="number"] {
+
     width: 100%;
 
-    padding: 12px;
+    min-width: 0;
+
+    padding: 13px;
 
     border: 1px solid var(--border);
+
     border-radius: 6px;
 
     background: white;
+
     color: var(--dark);
 
     font-family: Calibri, Arial, sans-serif;
+
     font-size: 16px;
 
     outline: none;
+
 }
 
 
 input[type="number"]:focus {
+
     border-color: var(--terracotta);
 
     box-shadow:
         0 0 0 3px rgba(183, 95, 69, 0.12);
+
 }
 
 
 .unit {
+
     color: var(--muted);
 
     white-space: nowrap;
 
     font-size: 14px;
+
 }
 
 
@@ -282,97 +350,138 @@ input[type="number"]:focus {
    ===================================================== */
 
 .size-options {
+
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(3, 1fr);
 
-    gap: 12px;
+    gap: 15px;
 
-    margin-top: 20px;
+    margin-top: 22px;
+
 }
 
 
-.size-option {
-    position: relative;
-}
+/*
+   SIZE BUTTONS
 
+   S = 50 × 5 cm
+   M = 70 × 8 cm
+   L = 90 × 12 cm
+*/
 
-.size-option input {
-    position: absolute;
+.size-button {
 
-    opacity: 0;
+    display: flex;
 
-    pointer-events: none;
-}
+    flex-direction: column;
 
+    align-items: center;
 
-.size-option label {
-    display: block;
+    justify-content: center;
 
-    padding: 16px 10px;
+    gap: 5px;
+
+    min-height: 85px;
+
+    padding: 15px 10px;
 
     border: 1px solid var(--border);
+
     border-radius: 6px;
 
     background: white;
+
     color: var(--brown);
 
-    text-align: center;
-
-    font-size: 16px;
-    font-weight: 600;
+    font-family: Calibri, Arial, sans-serif;
 
     cursor: pointer;
 
-    transition: all 0.2s ease;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.1s ease;
+
 }
 
 
-.size-option label:hover {
+.size-button strong {
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+}
+
+
+.size-button span {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+.size-button:hover {
+
     border-color: var(--terracotta);
 
     background: var(--soft-rust);
+
 }
 
 
-.size-option input:checked + label {
+.size-button:active {
+
+    transform: scale(0.98);
+
+}
+
+
+/*
+   SELECTED SIZE
+*/
+
+.size-button.selected {
+
     background: var(--terracotta);
 
     border-color: var(--terracotta);
 
     color: white;
+
+}
+
+
+.size-button.selected span {
+
+    color: white;
+
 }
 
 
 /* =====================================================
-   SELECT ALL
+   SELECTED SIZE DISPLAY
    ===================================================== */
 
-.select-all {
-    margin-top: 14px;
+.size-key {
 
-    text-align: right;
-}
-
-
-.select-all button {
-    padding: 0;
-
-    border: none;
-
-    background: none;
+    margin-top: 20px;
 
     color: var(--olive);
 
-    font-family: Calibri, Arial, sans-serif;
+    text-align: center;
 
     font-size: 13px;
-    font-weight: 600;
 
-    cursor: pointer;
+    font-weight: 700;
 
-    text-decoration: underline;
+    letter-spacing: 2px;
+
 }
 
 
@@ -381,36 +490,54 @@ input[type="number"]:focus {
    ===================================================== */
 
 .button-area {
-    padding: 0 35px 35px;
+
+    padding: 0 45px 40px;
+
 }
 
 
 .calculate-button {
+
     width: 100%;
 
-    padding: 16px;
+    padding: 17px;
 
     border: none;
+
     border-radius: 6px;
 
     background: var(--terracotta);
+
     color: white;
 
     font-family: Calibri, Arial, sans-serif;
 
     font-size: 16px;
+
     font-weight: 600;
 
     letter-spacing: 1px;
 
     cursor: pointer;
 
-    transition: background 0.2s ease;
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+
 }
 
 
 .calculate-button:hover {
+
     background: var(--rust);
+
+}
+
+
+.calculate-button:active {
+
+    transform: scale(0.995);
+
 }
 
 
@@ -419,6 +546,7 @@ input[type="number"]:focus {
    ===================================================== */
 
 .error {
+
     display: none;
 
     margin-top: 15px;
@@ -428,7 +556,9 @@ input[type="number"]:focus {
     text-align: center;
 
     font-size: 14px;
+
     font-weight: 600;
+
 }
 
 
@@ -437,25 +567,30 @@ input[type="number"]:focus {
    ===================================================== */
 
 .results {
+
     display: none;
 
-    padding: 38px 35px;
+    padding: 42px 45px;
 
     background: var(--soft-rust);
+
 }
 
 
 .results-title {
-    margin-bottom: 28px;
+
+    margin-bottom: 30px;
 
     color: var(--rust);
 
     text-align: center;
 
     font-size: 22px;
+
     font-weight: 600;
 
     letter-spacing: 1px;
+
 }
 
 
@@ -464,80 +599,82 @@ input[type="number"]:focus {
    ===================================================== */
 
 .pattern-instructions {
-    padding: 30px;
+
+    padding: 32px;
 
     background: var(--paper);
 
     border: 1px solid var(--border);
 
     text-align: center;
+
 }
 
 
 .pattern-instructions p {
-    margin: 14px 0;
+
+    margin: 16px 0;
 
     font-size: 19px;
 
-    line-height: 1.7;
+    line-height: 1.8;
+
 }
 
 
 .pattern-instructions strong {
+
     color: var(--rust);
 
-    font-size: 26px;
-    font-weight: 700;
-}
+    font-size: 27px;
 
-
-.size-key {
-    margin-top: 22px;
-
-    color: var(--olive);
-
-    font-size: 13px;
     font-weight: 700;
 
-    letter-spacing: 2px;
 }
 
 
 /* =====================================================
-   ADVANCED
+   ADVANCED / PATTERN NOTES
    ===================================================== */
 
 .advanced {
-    margin-top: 30px;
 
-    padding-top: 25px;
+    margin-top: 32px;
+
+    padding-top: 27px;
 
     border-top: 1px solid var(--border);
 
     text-align: left;
+
 }
 
 
 .advanced-title {
+
     margin-bottom: 10px;
 
     color: var(--olive);
 
     font-size: 14px;
+
     font-weight: 700;
 
     letter-spacing: 1px;
+
 }
 
 
 .advanced p {
+
     margin: 0;
 
     color: var(--dark);
 
     font-size: 15px;
 
-    line-height: 1.7;
+    line-height: 1.8;
+
 }
 
 
@@ -546,55 +683,70 @@ input[type="number"]:focus {
    ===================================================== */
 
 .action-buttons {
+
     display: flex;
 
-    gap: 12px;
+    gap: 14px;
 
-    margin-top: 25px;
+    margin-top: 28px;
+
 }
 
 
 .action-button {
+
     flex: 1;
 
-    padding: 14px;
+    padding: 15px;
 
     border-radius: 6px;
 
     font-family: Calibri, Arial, sans-serif;
 
     font-size: 15px;
+
     font-weight: 600;
 
     cursor: pointer;
+
+    transition: background 0.2s ease;
+
 }
 
 
 .print-button {
+
     border: 1px solid var(--terracotta);
 
     background: white;
 
     color: var(--terracotta);
+
 }
 
 
 .print-button:hover {
+
     background: var(--soft-rust);
+
 }
 
 
 .download-button {
+
     border: none;
 
     background: var(--olive);
 
     color: white;
+
 }
 
 
 .download-button:hover {
+
     background: #5C5D3B;
+
 }
 
 
@@ -603,7 +755,8 @@ input[type="number"]:focus {
    ===================================================== */
 
 .copyright {
-    padding: 30px 35px 35px;
+
+    padding: 35px 45px 40px;
 
     color: var(--muted);
 
@@ -611,7 +764,8 @@ input[type="number"]:focus {
 
     font-size: 12px;
 
-    line-height: 1.7;
+    line-height: 1.8;
+
 }
 
 
@@ -621,140 +775,271 @@ input[type="number"]:focus {
 
 @media (max-width: 650px) {
 
+
     body {
+
         padding: 15px;
+
+    }
+
+
+    .container {
+
+        max-width: 100%;
+
     }
 
 
     .language-switcher {
-        padding-right: 20px;
+
+        padding:
+            15px 20px 0;
+
     }
 
 
     .header {
-        padding: 25px 20px 30px;
+
+        padding:
+            28px 20px 32px;
+
     }
 
 
     .header-title {
-        font-size: 24px;
+
+        font-size: 25px;
+
     }
 
 
-    .gauge-grid {
-        grid-template-columns: 1fr;
-    }
+    .brand {
 
+        font-size: 15px;
 
-    .size-options {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-
-    .section {
-        padding: 28px 20px;
-    }
-
-
-    .button-area {
-        padding: 0 20px 28px;
-    }
-
-
-    .results {
-        padding: 30px 20px;
     }
 
 
     .divider {
+
         margin: 0 20px;
+
+    }
+
+
+    .section {
+
+        padding:
+            30px 20px;
+
+    }
+
+
+    .gauge-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+
+    .size-options {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+    }
+
+
+    .size-button {
+
+        min-height: 70px;
+
+    }
+
+
+    .button-area {
+
+        padding:
+            0 20px 30px;
+
+    }
+
+
+    .results {
+
+        padding:
+            32px 20px;
+
     }
 
 
     .pattern-instructions {
-        padding: 25px 18px;
+
+        padding:
+            25px 18px;
+
     }
 
 
     .pattern-instructions p {
+
         font-size: 17px;
+
     }
 
 
     .pattern-instructions strong {
+
         font-size: 23px;
+
     }
 
 
     .action-buttons {
+
         flex-direction: column;
+
+    }
+
+
+    .copyright {
+
+        padding:
+            28px 20px 32px;
+
     }
 
 }
 
 
 /* =====================================================
-   PRINT
+   PRINT — A4
    ===================================================== */
 
 @media print {
 
+
     @page {
+
         size: A4;
+
         margin: 15mm;
+
     }
 
 
     body {
+
         padding: 0;
 
         background: white;
 
+        color: black;
+
         font-size: 12pt;
+
     }
 
 
     .container {
+
         max-width: none;
+
     }
 
 
     .pattern-card {
+
         border: none;
 
         box-shadow: none;
+
     }
 
 
     .language-switcher,
     .button-area,
     .action-buttons {
+
+        display: none !important;
+
+    }
+
+
+    .header {
+
+        padding:
+            10px 0 20px;
+
+    }
+
+
+    .header-decoration {
+
         display: none;
+
+    }
+
+
+    .divider {
+
+        margin: 0;
+
+        background: #999;
+
+    }
+
+
+    .section {
+
+        padding:
+            20px 0;
+
     }
 
 
     .results {
+
         display: block !important;
+
+        padding:
+            20px 0;
 
         background: white;
 
-        padding: 20px 0;
     }
 
 
     .results-title {
+
         color: black;
+
     }
 
 
     .pattern-instructions {
+
         border: 1px solid #999;
+
+        background: white;
+
+    }
+
+
+    .size-button {
+
+        border: 1px solid #999;
+
     }
 
 
     .copyright {
+
         page-break-inside: avoid;
+
     }
 
 }
