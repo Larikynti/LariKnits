@@ -10,23 +10,63 @@
 
     <title>Scrunchie Knitting Pattern | LariKnits</title>
 
+    <!-- Main website style -->
     <link rel="stylesheet" href="../../style/style.css">
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
-    <main class="card">
+    <div class="pattern-card">
 
 
-        <!-- HEADER -->
+        <!-- =================================================
+             LANGUAGE SWITCHER
+             ================================================= -->
 
-        <header class="site-header">
+        <div class="language-switcher">
 
-            <h1>
+            <button
+                id="englishButton"
+                class="active"
+                onclick="setLanguage('en')">
+
+                EN
+
+            </button>
+
+            <button
+                id="germanButton"
+                onclick="setLanguage('de')">
+
+                DE
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="header">
+
+            <div class="header-decoration">
+                ✦
+            </div>
+
+            <h1
+                class="header-title"
+                data-en="Scrunchie Knitting Pattern"
+                data-de="Strickanleitung für Scrunchie">
+
                 Scrunchie Knitting Pattern
+
             </h1>
 
             <div class="brand">
@@ -36,279 +76,529 @@
         </header>
 
 
-        <!-- INTRODUCTION -->
+        <div class="divider"></div>
+
+
+        <!-- =================================================
+             INTRODUCTION
+             ================================================= -->
 
         <section class="section">
 
-            <p>
-                Create your own scrunchie knitting pattern
-                based on your yarn gauge and preferred size.
-            </p>
+            <h2
+                class="section-title"
+                data-en="INTRODUCTION"
+                data-de="EINLEITUNG">
 
-        </section>
+                INTRODUCTION
 
-
-        <!-- INPUT PARAMETERS -->
-
-        <section class="section">
-
-            <h2>
-                Please enter
             </h2>
 
+            <p
+                class="intro"
+                data-en="Create your own knitted scrunchie using your yarn, gauge and preferred size."
+                data-de="Erstelle deinen eigenen gestrickten Scrunchie mit deinem Garn, deiner Maschenprobe und deiner gewünschten Größe.">
 
-            <div class="input-field">
-
-                <label for="needle">
-                    Needle size:
-                </label>
-
-                <input
-                    id="needle"
-                    type="number"
-                    min="0.1"
-                    step="0.1"
-                    placeholder="2.5">
-
-            </div>
-
-
-            <div class="input-field">
-
-                <label for="stitches">
-                    Stitches per 10 cm:
-                </label>
-
-                <input
-                    id="stitches"
-                    type="number"
-                    min="0.1"
-                    step="0.1"
-                    placeholder="30">
-
-            </div>
-
-
-            <div class="input-field">
-
-                <label for="rows">
-                    Rows per 10 cm:
-                </label>
-
-                <input
-                    id="rows"
-                    type="number"
-                    min="0.1"
-                    step="0.1"
-                    placeholder="40">
-
-            </div>
-
-
-            <div class="input-field">
-
-                <label for="hairTie">
-                    Hair tie circumference:
-                </label>
-
-                <input
-                    id="hairTie"
-                    type="number"
-                    min="0.1"
-                    step="0.1"
-                    value="5">
-
-                <span>cm</span>
-
-            </div>
-
-
-            <p class="input-tip">
-
-                <strong>Tip:</strong>
-                To measure the circumference, wrap a piece
-                of yarn around your wrist where you would
-                normally wear the hair tie. Mark where the
-                ends meet, then measure the yarn flat with
-                a ruler.
+                Create your own knitted scrunchie using your yarn,
+                gauge and preferred size.
 
             </p>
 
         </section>
 
 
-        <!-- SIZE -->
+        <div class="divider"></div>
+
+
+        <!-- =================================================
+             YOUR GAUGE
+             ================================================= -->
 
         <section class="section">
 
-            <h2>
-                Select Size
+            <h2
+                class="section-title"
+                data-en="YOUR GAUGE"
+                data-de="DEINE MASCHENPROBE">
+
+                YOUR GAUGE
+
             </h2>
 
 
-           <div class="size-options">
+            <p
+                class="intro"
+                data-en="Enter the information from your yarn and swatch."
+                data-de="Gib die Informationen zu deinem Garn und deiner Maschenprobe ein.">
 
-    <label class="size-option">
+                Enter the information from your yarn and swatch.
 
-        <input
-            type="checkbox"
-            name="size"
-            value="S">
-
-        <span>S</span>
-
-    </label>
+            </p>
 
 
-    <label class="size-option">
-
-        <input
-            type="checkbox"
-            name="size"
-            value="M">
-
-        <span>M</span>
-
-    </label>
+            <div class="gauge-grid">
 
 
-    <label class="size-option">
+                <!-- NEEDLE SIZE -->
 
-        <input
-            type="checkbox"
-            name="size"
-            value="L">
+                <div class="field">
 
-        <span>L</span>
+                    <label
+                        for="needle"
+                        data-en="Needle Size"
+                        data-de="Nadelstärke">
 
-    </label>
+                        Needle Size
+
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <input
+                            type="number"
+                            id="needle"
+                            min="0.1"
+                            step="0.1"
+                            placeholder="5">
+
+                        <span class="unit">
+                            mm
+                        </span>
+
+                    </div>
+
+                </div>
 
 
-    <label class="size-option">
+                <!-- STITCHES -->
 
-        <input
-            type="checkbox"
-            name="size"
-            value="ALL">
+                <div class="field">
 
-        <span>ALL SIZES</span>
+                    <label
+                        for="stitches"
+                        data-en="Stitches"
+                        data-de="Maschen">
 
-    </label>
+                        Stitches
 
-</div>
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <input
+                            type="number"
+                            id="stitches"
+                            min="0.1"
+                            step="0.1"
+                            placeholder="20">
+
+                        <span class="unit">
+                            / 10 cm
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ROWS -->
+
+                <div class="field">
+
+                    <label
+                        for="rows"
+                        data-en="Rows"
+                        data-de="Reihen">
+
+                        Rows
+
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <input
+                            type="number"
+                            id="rows"
+                            min="0.1"
+                            step="0.1"
+                            placeholder="28">
+
+                        <span class="unit">
+                            / 10 cm
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HAIR TIE -->
+
+            <div class="field" style="margin-top: 22px;">
+
+                <label
+                    for="hairTie"
+                    data-en="Hair Tie Circumference"
+                    data-de="Haargummi Umfang">
+
+                    Hair Tie Circumference
+
+                </label>
+
+                <div class="input-wrapper">
+
+                    <input
+                        type="number"
+                        id="hairTie"
+                        min="0.1"
+                        step="0.1"
+                        placeholder="5">
+
+                    <span class="unit">
+                        cm
+                    </span>
+
+                </div>
+
+                <p
+                    class="intro"
+                    style="margin-top: 8px; margin-bottom: 0;"
+                    data-en="Tip: Wrap a piece of yarn around your wrist where you would like the scrunchie to sit, then measure the length of the yarn."
+                    data-de="Tipp: Wickle ein Stück Garn um dein Handgelenk, so wie der Scrunchie sitzen soll, und miss anschließend die Länge des Garns.">
+
+                    Tip: Wrap a piece of yarn around your wrist where
+                    you would like the scrunchie to sit, then measure
+                    the length of the yarn.
+
+                </p>
 
             </div>
 
         </section>
 
 
-        <!-- CALCULATE -->
-
-        <section class="section calculate-section">
-
-            <button
-                id="calculate-button"
-                class="calculate-button"
-                type="button">
-                onclick="calculatePattern()">
-
-                CALCULATE PATTERN
-
-            </button>
-
-        </section>
+        <div class="divider"></div>
 
 
-        <!-- PATTERN INSTRUCTIONS -->
+        <!-- =================================================
+             SIZE SELECTION
+             ================================================= -->
 
-        <section
-            id="results"
-            class="section">
+        <section class="section">
 
-            <h2>
-                Pattern Instructions
+            <h2
+                class="section-title"
+                data-en="CHOOSE YOUR SIZE"
+                data-de="WÄHLE DEINE GRÖSSE">
+
+                CHOOSE YOUR SIZE
+
             </h2>
 
 
-            <div class="step">
+            <p
+                class="intro"
+                data-en="Choose the size you would like to calculate."
+                data-de="Wähle die Größe, die du berechnen möchtest.">
 
-                <h3>
-                    Step 1
-                </h3>
+                Choose the size you would like to calculate.
 
-                <p id="step-1">
-                    —
-                </p>
+            </p>
+
+
+            <!-- SIZE BUTTONS -->
+
+            <div class="size-options">
+
+
+                <button
+                    type="button"
+                    class="size-button"
+                    data-size="S"
+                    onclick="selectSize('S')">
+
+                    <strong>S</strong>
+
+                    <span>
+                        50 × 5 cm
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="size-button"
+                    data-size="M"
+                    onclick="selectSize('M')">
+
+                    <strong>M</strong>
+
+                    <span>
+                        70 × 8 cm
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="size-button"
+                    data-size="L"
+                    onclick="selectSize('L')">
+
+                    <strong>L</strong>
+
+                    <span>
+                        90 × 12 cm
+                    </span>
+
+                </button>
+
 
             </div>
 
 
-            <div class="step">
+            <!-- SELECTED SIZE -->
 
-                <h3>
-                    Step 2
-                </h3>
+            <div
+                id="selectedSize"
+                class="size-key">
 
-                <p id="step-2">
-                    —
-                </p>
-
-            </div>
-
-
-            <div class="step">
-
-                <h3>
-                    Step 3
-                </h3>
-
-                <p id="step-3">
-                    —
-                </p>
+                No size selected
 
             </div>
 
         </section>
 
 
-        <!-- PRINT -->
+        <!-- =================================================
+             CALCULATE
+             ================================================= -->
 
-        <section class="section print-section">
+        <div class="button-area">
 
             <button
                 type="button"
-                class="print-button"
-                onclick="window.print()">
+                class="calculate-button"
+                onclick="calculatePattern()"
+                data-en="CALCULATE MY PATTERN"
+                data-de="MEINE ANLEITUNG BERECHNEN">
 
-                PRINT PATTERN
+                CALCULATE MY PATTERN
 
             </button>
+
+
+            <div
+                id="error"
+                class="error"
+                data-en="Please enter your gauge and choose a size."
+                data-de="Bitte gib deine Maschenprobe ein und wähle eine Größe.">
+
+                Please enter your gauge and choose a size.
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RESULTS
+             ================================================= -->
+
+        <section
+            id="results"
+            class="results">
+
+
+            <div
+                class="results-title"
+                data-en="YOUR PERSONAL PATTERN"
+                data-de="DEINE PERSÖNLICHE ANLEITUNG">
+
+                YOUR PERSONAL PATTERN
+
+            </div>
+
+
+            <div class="pattern-instructions">
+
+
+                <!-- STITCHES -->
+
+                <p>
+
+                    <span
+                        data-en="Cast on"
+                        data-de="Schlage">
+
+                        Cast on
+
+                    </span>
+
+                    <strong id="stitchResult">
+                        —
+                    </strong>
+
+                    <span
+                        data-en="stitches."
+                        data-de="Maschen an.">
+
+                        stitches.
+
+                    </span>
+
+                </p>
+
+
+                <!-- ROUNDS -->
+
+                <p>
+
+                    <span
+                        data-en="Knit"
+                        data-de="Stricke">
+
+                        Knit
+
+                    </span>
+
+                    <strong id="roundResult">
+                        —
+                    </strong>
+
+                    <span
+                        data-en="rounds in stockinette stitch."
+                        data-de="Runden glatt rechts.">
+
+                        rounds in stockinette stitch.
+
+                    </span>
+
+                </p>
+
+
+                <!-- SIZE -->
+
+                <div
+                    id="sizeKey"
+                    class="size-key">
+
+                    —
+
+                </div>
+
+
+                <!-- ADVANCED -->
+
+                <div class="advanced">
+
+                    <div
+                        class="advanced-title"
+                        data-en="PATTERN NOTES"
+                        data-de="HINWEISE ZUR ANLEITUNG">
+
+                        PATTERN NOTES
+
+                    </div>
+
+
+                    <p
+                        data-en="Cast on using the chosen cast-on method. Work in stockinette stitch until the piece reaches the required width. Wrap the knitted piece around the hair tie and join the ends using Kitchener stitch."
+                        data-de="Schlage die Maschen mit der gewählten Anschlagmethode an. Stricke glatt rechts, bis das Stück die gewünschte Breite erreicht hat. Wickle das gestrickte Stück um das Haargummi und verbinde die Enden mit dem Kitchener Stitch.">
+
+                        Cast on using the chosen cast-on method.
+                        Work in stockinette stitch until the piece
+                        reaches the required width. Wrap the knitted
+                        piece around the hair tie and join the ends
+                        using Kitchener stitch.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ACTION BUTTONS
+                 ================================================= -->
+
+            <div class="action-buttons">
+
+                <button
+                    type="button"
+                    class="action-button print-button"
+                    onclick="window.print()"
+                    data-en="PRINT PATTERN"
+                    data-de="ANLEITUNG DRUCKEN">
+
+                    PRINT PATTERN
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="action-button download-button"
+                    onclick="downloadPattern()"
+                    data-en="DOWNLOAD PATTERN"
+                    data-de="ANLEITUNG HERUNTERLADEN">
+
+                    DOWNLOAD PATTERN
+
+                </button>
+
+            </div>
+
 
         </section>
 
 
-        <!-- FOOTER -->
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
 
-        <footer class="site-footer">
+        <footer
+            class="copyright"
+            data-en="This pattern is for personal use only.<br><br>Please do not copy, reproduce, redistribute, sell, or share this pattern or any part of it without permission from LariKnits.<br><br>Share your finished project using #LariKnits.<br><br>© LariKnits. All rights reserved."
+            data-de="Diese Anleitung ist ausschließlich für den persönlichen Gebrauch bestimmt.<br><br>Bitte kopiere, vervielfältige, verbreite, verkaufe oder teile diese Anleitung oder Teile davon nicht ohne die Genehmigung von LariKnits.<br><br>Teile dein fertiges Projekt mit #LariKnits.<br><br>© LariKnits. Alle Rechte vorbehalten.">
 
-            <p>
-                © LariKnits. All rights reserved.
-            </p>
+            This pattern is for personal use only.
 
-            <p>
-                Share your finished project using
-                <strong>#LariKnits</strong>
-            </p>
+            <br><br>
+
+            Please do not copy, reproduce, redistribute,
+            sell, or share this pattern or any part of it
+            without permission from LariKnits.
+
+            <br><br>
+
+            Share your finished project using #LariKnits.
+
+            <br><br>
+
+            © LariKnits. All rights reserved.
 
         </footer>
 
 
-    </main>
+    </div>
 
 </div>
-    
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
 <script src="config.js"></script>
+
 <script src="scrunchie-calculator.js"></script>
+
 
 </body>
 
