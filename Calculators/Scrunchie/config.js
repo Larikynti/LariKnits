@@ -1,12 +1,10 @@
 const scrunchieConfig = {
 
-    // Calculator name
     name: "Scrunchie",
 
-    // Hair tie default circumference
-    defaultHairTieCircumference: 5,
+    // Default hair tie diameter in cm
+    defaultHairTieDiameter: 5,
 
-    // Available sizes
     sizes: {
 
         S: {
