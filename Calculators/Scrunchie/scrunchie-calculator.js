@@ -1,6 +1,6 @@
 function calculatePattern() {
 
-    // Get user inputs
+    // Get gauge
     const stitchesPer10 = parseFloat(
         document.getElementById("stitches").value
     );
@@ -9,16 +9,18 @@ function calculatePattern() {
         document.getElementById("rows").value
     );
 
+
     // Get selected sizes
-    const selectedSizes = document.querySelectorAll(
+    const selectedInputs = document.querySelectorAll(
         'input[name="size"]:checked'
     );
 
-    // Check that all required information is entered
+
+    // Validate input
     if (
         isNaN(stitchesPer10) ||
         isNaN(rowsPer10) ||
-        selectedSizes.length === 0
+        selectedInputs.length === 0
     ) {
 
         alert("Please enter your gauge and select a size.");
@@ -27,40 +29,134 @@ function calculatePattern() {
     }
 
 
-    // Calculate each selected size
-    selectedSizes.forEach(function(sizeInput) {
+    // Determine selected sizes
+    let selectedSizes = [];
 
-        const size = sizeInput.value;
 
-        const dimensions = scrunchieConfig.sizes[size];
+    selectedInputs.forEach(function(input) {
 
-        // Calculate stitches from width
+        if (input.value === "ALL") {
+
+            selectedSizes = ["S", "M", "L"];
+
+        } else {
+
+            selectedSizes.push(input.value);
+
+        }
+
+    });
+
+
+    // Remove duplicates
+    selectedSizes = [...new Set(selectedSizes)];
+
+
+    // Calculate results
+    const results = [];
+
+
+    selectedSizes.forEach(function(size) {
+
+        const dimensions =
+            scrunchieConfig.sizes[size];
+
+
+        // Width → stitches
         let stitches =
             stitchesPer10 *
             dimensions.width /
             10;
 
-        // Round to nearest even number
+
+        // Round stitches to nearest even number
         stitches =
             Math.round(stitches / 2) * 2;
 
 
-        // Calculate rows from length
+        // Length → rows
         let rows =
             rowsPer10 *
             dimensions.length /
             10;
 
-        // Round to nearest whole number
+
+        // Round rows to whole number
         rows =
             Math.round(rows);
 
 
-        console.log(
-            size,
-            stitches,
-            rows
-        );
+        results.push({
+
+            size: size,
+
+            length: dimensions.length,
+
+            width: dimensions.width,
+
+            stitches: stitches,
+
+            rows: rows
+
+        });
+
+    });
+
+
+    // Display the results
+    displayResults(results);
+
+}
+
+
+function displayResults(results) {
+
+    const step1 =
+        document.getElementById("step-1");
+
+    const step2 =
+        document.getElementById("step-2");
+
+    const step3 =
+        document.getElementById("step-3");
+
+
+    // Step 1
+    step1.innerHTML =
+        results.map(function(result) {
+
+            return `
+                <strong>${result.size}</strong>:
+                Cast on ${result.stitches} stitches.
+            `;
+
+        }).join("<br>");
+
+
+    // Step 2
+    step2.innerHTML =
+        results.map(function(result) {
+
+            return `
+                <strong>${result.size}</strong>:
+                Knit ${result.rows} rows.
+            `;
+
+        }).join("<br>");
+
+
+    // Step 3
+    step3.innerHTML =
+        "Insert the hair tie and wrap the knitted piece around it. " +
+        "Join the ends using Kitchener stitch.";
+
+
+    // Scroll to results
+    document.getElementById("results").scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
 
     });
 
